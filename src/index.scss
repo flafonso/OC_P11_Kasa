@@ -1,0 +1,34 @@
+@import "./sassStyles/global";
+
+header {
+  margin: 45px 100px 50px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  nav {
+    display: flex;
+    gap: 57px;
+    a {
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.container-page {
+  padding: 0px 100px;
+}
+
+footer {
+  padding-top: 4.5vw;
+  width: 100vw;
+  height: 14.6vw;
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.9vw;
+}
