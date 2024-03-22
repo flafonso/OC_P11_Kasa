@@ -10,11 +10,9 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Housing from "./pages/Housing";
 import Error from "./components/Error";
+import Logo from "./components/logo";
 
 import "./index.scss";
-
-// import logo from "./assets/logo.svg";
-import Logo from "./components/logo";
 
 const router = createBrowserRouter([
   {
