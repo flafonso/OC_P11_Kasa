@@ -1,7 +1,9 @@
+import Banner from "../../components/Banner";
+
 function AboutUs() {
   return (
-    <div>
-      <h1>À propos de nous</h1>
+    <div className="home">
+      <Banner title="" classOption="--about-us"/>
     </div>
   );
 }

@@ -1,7 +1,10 @@
+import Banner from "../../components/Banner";
+import "./home.scss";
+
 function Home() {
   return (
-    <div>
-      <h1>Hello c'est l'accueil.</h1>
+    <div className="home">
+      <Banner title="Chez vous, partout et ailleurs" classOption="--home"/>
     </div>
   );
 }
