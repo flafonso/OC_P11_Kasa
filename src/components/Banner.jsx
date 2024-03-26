@@ -16,7 +16,7 @@ function Banner({ title, classOption}) {
 
 Banner.propTypes = {
   title: PropTypes.string,
-  classOption: PropTypes.string
+  classOption: PropTypes.string.isRequired
 };
 
 export default Banner;

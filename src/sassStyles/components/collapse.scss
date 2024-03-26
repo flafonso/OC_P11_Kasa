@@ -1,0 +1,29 @@
+.collapse {
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  &__title {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #ff6060;
+    border-radius: 5px;
+  }
+  &__arrow {
+    margin-right: 10px;
+    width: 25px;
+    height: 14px;
+    background: url("../../assets/icons/arrow-ronded-corners.svg");
+  }
+  &__content {
+    display: none;
+    padding: 20px;
+    font-size: 18px;
+    .collapse--unfolded & {
+      display: block;
+    }
+  }
+}

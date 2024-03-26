@@ -1,4 +1,4 @@
-import PropType from "prop-type";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../sassStyles/components/card.scss";
 
@@ -13,8 +13,8 @@ function Card({ ad }) {
   );
 }
 
-Card.PropType = {
-  ad: PropType.object,
+Card.propTypes = {
+  ad: PropTypes.object.isRequired
 };
 
 
