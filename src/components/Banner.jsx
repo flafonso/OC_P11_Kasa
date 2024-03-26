@@ -6,7 +6,7 @@ function Banner({ title, classOption}) {
   // console.log(root);
   // root?.style.setProperty("--banner-background", "../../assets/images/landscape-1.jpg");
   const bannerClass = `banner banner${classOption}`;
-  
+
   return (
     <div className={bannerClass}>
       {title && <h1 className="banner__title">{title}</h1>}
@@ -15,7 +15,8 @@ function Banner({ title, classOption}) {
 }
 
 Banner.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  classOption: PropTypes.string
 };
 
 export default Banner;

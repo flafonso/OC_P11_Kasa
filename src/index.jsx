@@ -23,6 +23,7 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+        loader: async () => await fetch("http://localhost:3000/logements.json"),
       },
       {
         path: "about-us",
