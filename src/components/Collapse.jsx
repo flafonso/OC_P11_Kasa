@@ -7,8 +7,12 @@ function Collapse({ title, content }) {
 
   return (
     <div className={`collapse ${!isFolded ? "collapse--unfolded" : ""}`}>
-      <div className="collapse__title" onClick={() => setIsFolded(!isFolded)}>
-        {title} <span className="collapse__arrow"></span>
+      <div className="collapse__title">
+        {title}{" "}
+        <span
+          className="collapse__arrow"
+          onClick={() => setIsFolded(!isFolded)}
+        ></span>
       </div>
       <div className="collapse__content">{content}</div>
     </div>
