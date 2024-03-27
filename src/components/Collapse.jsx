@@ -14,7 +14,9 @@ function Collapse({ title, content }) {
           onClick={() => setIsFolded(!isFolded)}
         ></span>
       </div>
-      <div className="collapse__content">{content}</div>
+      <div className="collapse__content">
+        <p>{content}</p>
+      </div>
     </div>
   );
 }

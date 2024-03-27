@@ -17,13 +17,30 @@
     width: 25px;
     height: 14px;
     background: url("../../assets/icons/arrow-ronded-corners.svg");
+    transition: all 400ms;
+    .collapse--unfolded & {
+      transform: rotate(-180deg);
+    }
   }
   &__content {
-    display: none;
-    padding: 20px;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: all 400ms ease-in-out;
     font-size: 18px;
     .collapse--unfolded & {
-      display: block;
+      max-height: 1000px;
+    }
+
+    & p {
+      margin: 0;
+      padding: 20px;
+      transform-origin: top;
+      transform: translateY(-70px);
+      transition: all 400ms ease-in-out;
+      .collapse--unfolded & {
+        transform: translateY(0);
+      }
     }
   }
 }
