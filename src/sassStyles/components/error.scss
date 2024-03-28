@@ -1,0 +1,21 @@
+.error{
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-around;
+  align-items: center;
+  gap: 6.6vw;
+  margin: 6.6vw 0px;
+  color: #FF6060;
+  &__title {
+    margin: 0;
+    font-size: 288px;
+  }
+  &__message {
+    margin: 0;
+    font-size: 36px;
+  }
+  & a {
+    color: black;
+    font-size: 18px;
+  }
+}

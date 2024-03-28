@@ -18,7 +18,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <Error />,
+    errorElement: (
+      <Root>
+        <Error />
+      </Root>
+    ),
     children: [
       {
         path: "",
@@ -37,7 +41,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-function Root() {
+function Root({ children }) {
   return (
     <div>
       <header>
@@ -48,7 +52,7 @@ function Root() {
         </nav>
       </header>
       <div className="container-page">
-        <Outlet />
+        {children ?? <Outlet />}
       </div>
       <footer>
         <Logo width={122} height={39} fill="#ffffff" />
