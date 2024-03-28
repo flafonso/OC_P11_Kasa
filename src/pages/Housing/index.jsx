@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import Slideshow from "../../components/Slideshow";
 
 function Housing() {
   const location = useLocation();
@@ -7,7 +8,7 @@ function Housing() {
 
   return (
     <div>
-      <h1>Fiche du logement: {ad.title}</h1>
+      <Slideshow pictures={ad.pictures} />
     </div>
   );
 }
