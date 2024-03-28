@@ -1,3 +1,5 @@
+@import "../variables";
+
 .error{
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   align-items: center;
   gap: 6.6vw;
   margin: 6.6vw 0px;
-  color: #FF6060;
+  color: $--main-color;
   &__title {
     margin: 0;
     font-size: 288px;

@@ -3,9 +3,9 @@ import "../sassStyles/components/error.scss";
 
 function Error() {
   const error = useRouteError();
-  console.error(error);
-  console.log(error.error.message);
-  console.log(error.status);
+  // console.error(error);
+  // console.log(error.error.message);
+  // console.log(error.status);
 
   return (
     <div className="error">
