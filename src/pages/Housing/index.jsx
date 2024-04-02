@@ -35,7 +35,7 @@ function Housing() {
         </div>
         <div className="housing__host">
           <div className="host">
-            <p className="host__name">{ad.host.name}</p>
+            <p className="host__name">{ad.host.name.replace(" ", "\n")}</p>
             <div
               className="host__picture"
               style={{
