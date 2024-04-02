@@ -1,13 +1,12 @@
-import { useLocation } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Collapse from "../../components/Collapse";
 import Slideshow from "../../components/Slideshow";
 import RatingStar from "../../components/RatingStar";
 import "./housing.scss";
 
 function Housing() {
-  const location = useLocation();
-  const ad = location.state;
-  console.log(ad);
+  const ad = useLoaderData();
+  // console.log(ad);
 
   let ratingStars = [];
   for (let i = 0; i < 5; i++) {

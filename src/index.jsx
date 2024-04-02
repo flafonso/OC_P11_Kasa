@@ -34,8 +34,17 @@ const router = createBrowserRouter([
         element: <AboutUs />,
       },
       {
-        path: "housing-sheet",
+        path: "housing-sheet/:id",
         element: <Housing />,
+        loader: async ({ params }) => {
+          const response = await fetch("http://localhost:3000/logements.json");
+          const data = await response.json();
+          const ad = data.find((ad) => ad.id === params.id);
+          if (!ad) {
+            throw new Response("ID not found", { status: 404 });
+        }
+          return ad;
+        },
       },
     ],
   },
@@ -51,9 +60,7 @@ function Root({ children }) {
           <NavLink to="/about-us">A propos</NavLink>
         </nav>
       </header>
-      <div className="container-page">
-        {children ?? <Outlet />}
-      </div>
+      <div className="container-page">{children ?? <Outlet />}</div>
       <footer>
         <Logo width={122} height={39} fill="#ffffff" />
         <p>© 2020 Kasa. All rights reserved</p>
