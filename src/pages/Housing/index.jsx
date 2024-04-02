@@ -14,7 +14,7 @@ function Housing() {
   }
 
   let equipmentsTxt = "";
-  ad.equipments.map((equipement) => equipmentsTxt+= `${equipement}\n`);
+  ad.equipments.map((equipment) => equipmentsTxt+= `${equipment}\n`);
 
   return (
     <div className="housing">

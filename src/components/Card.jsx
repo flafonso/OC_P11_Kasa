@@ -13,7 +13,21 @@ function Card({ ad }) {
 }
 
 Card.propTypes = {
-  ad: PropTypes.object.isRequired
+  ad: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    cover: PropTypes.string,
+    pictures: PropTypes.arrayOf(PropTypes.string),
+    description: PropTypes.string,
+    host: PropTypes.shape({
+      name: PropTypes.string,
+      picture: PropTypes.string,
+    }),
+    rating: PropTypes.string,
+    location: PropTypes.string,
+    equipments: PropTypes.arrayOf(PropTypes.string),
+    tags: PropTypes.arrayOf(PropTypes.string),
+  })
 };
 
 

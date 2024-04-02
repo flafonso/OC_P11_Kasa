@@ -85,7 +85,7 @@ function Slideshow({ pictures }) {
 }
 
 Slideshow.propTypes = {
-  pictures: PropTypes.array,
+  pictures: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Slideshow;
