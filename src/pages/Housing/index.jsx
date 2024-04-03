@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Collapse from "../../components/Collapse";
 import Slideshow from "../../components/Slideshow";
 import RatingStar from "../../components/RatingStar";
-import "./housing.scss";
+import "../../sassStyles/pages/housing.scss";
 
 function Housing() {
   const ad = useLoaderData();

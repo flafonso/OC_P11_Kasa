@@ -1,6 +1,6 @@
 import Banner from "../../components/Banner";
 import Collapse from "../../components/Collapse";
-import "./about-us.scss";
+import "../../sassStyles/pages/about-us.scss";
 
 function AboutUs() {
   return (

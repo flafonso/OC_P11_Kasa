@@ -2,7 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../components/Banner";
 import Card from "../../components/Card";
-import "./home.scss";
+import "../../sassStyles/pages/home.scss";
 
 function Home() {
   const adsData = useLoaderData();

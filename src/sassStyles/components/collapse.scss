@@ -18,6 +18,7 @@
     margin-right: 10px;
     background: url("../../assets/icons/arrow-ronded-corners.svg");
     transition: transform 400ms;
+    cursor: pointer;
     .collapse--unfolded & {
       transform: rotate(-180deg);
     }
