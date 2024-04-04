@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .collapse {
   background-color: #f6f6f6;
   border-radius: 5px;
@@ -16,7 +18,7 @@
     width: 25px;
     height: 14px;
     margin-right: 10px;
-    background: url("../../assets/icons/arrow-ronded-corners.svg");
+    background: url("../../assets/icons/arrow-ronded-corners.svg") center center / 100% 100%;
     transition: transform 400ms;
     cursor: pointer;
     .collapse--unfolded & {
@@ -41,6 +43,31 @@
       .collapse--unfolded & {
         transform: translateY(0);
       }
+    }
+  }
+  @include mobile {
+    &__title {
+      font-size: 13px;
+    }
+    &__arrow {
+      width: 16px;
+      height: 9px;
+      margin-right: 2px;
+    }
+    &__content {
+      font-size: 12px;
+    }
+  }
+  @include tablet {
+    &__title {
+      font-size: 18px;
+    }
+    &__arrow {
+      width: 20px;
+      height: 13px;
+    }
+    &__content {
+      font-size: 16px;
     }
   }
 }

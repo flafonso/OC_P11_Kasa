@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins";
 
 .housing {
   &__header {
@@ -28,20 +29,76 @@
     align-items: center;
     gap: 10px;
   }
-
   &__host {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
   }
-
   &__details {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     & > .collapse {
       width: 47%;
+    }
+  }
+  @include mobile {
+    &__header {
+      margin: 15px 0;
+      flex-direction: column;
+      gap: 15px;
+    }
+    &__informations {
+      max-width: 100%;
+    }
+    &__title {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+    &__location {
+      font-size: 14px;
+    }
+    &__tags {
+      margin-top: 10px;
+    }
+    &__host {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    &__details {
+      flex-direction: column;
+      gap: 20px;
+      & > .collapse {
+        width: 100%;
+      }
+    }
+  }
+  @include tablet {
+    &__header {
+      margin: 15px 0px 25px 0px;
+      flex-direction: column;
+      gap: 15px;
+    }
+    &__informations {
+      max-width: 100%;
+    }
+    &__title {
+      margin-bottom: 5px;
+    }
+    &__tags {
+      margin-top: 10px;
+    }
+    &__host {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    &__details {
+      flex-direction: column;
+      gap: 20px;
+      & > .collapse {
+        width: 100%;
+      }
     }
   }
 }
@@ -69,6 +126,23 @@
     justify-content: flex-end;
     gap: 10px;
   }
+  @include mobile {
+    gap: 10px;
+    &__name {
+      font-size: 12px;
+    }
+    &__picture {
+      width: 32px;
+      height: 32px;
+    }
+    &__rating {
+      gap: 4px;
+      & .rating-star {
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
 }
 
 .tag {
@@ -78,4 +152,11 @@
   font-weight: bold;
   background-color: $--main-color;
   border-radius: 10px;
+  @include mobile {
+    font-size: 10px;
+    border-radius: 5px;
+  }
+  @include tablet {
+    border-radius: 5px;
+  }
 }

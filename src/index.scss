@@ -1,34 +1,65 @@
 @import "./sassStyles/global";
+@import "./sassStyles/mixins";
+
+#root {
+  width: 100vw;
+  box-sizing: border-box;
+}
 
 a.active {
   text-decoration: underline;
 }
 
 header {
-  margin: 45px 100px 50px 100px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 45px 100px 50px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 24px;
   nav {
     display: flex;
-    gap: 57px;
+    gap: clamp(25px, 3.8vw, 55px);
     a {
-      font-size: 24px;
       text-decoration: none;
       color: black;
+    }
+  }
+  @include mobile {
+    padding: 20px;
+    font-size: 12px;
+    & .logo {
+      width: 145px;
+      height: 46px;
+    }
+  }
+  @include tablet {
+    padding: 35px;
+    font-size: 18px;
+    & .logo {
+      width: 145px;
+      height: 46px;
     }
   }
 }
 
 .container-page {
-  padding: 0px 100px;
+  width: 86.2vw;
+  max-width: 1240px;
+  margin: 0px auto;
+  box-sizing: border-box;
+  @include mobile {
+    width: 100vw;
+    padding: 0px 20px;
+  }
 }
 
 footer {
   margin-top: 50px;
   padding-top: 4.5vw;
   width: 100vw;
-  height: 14.6vw;
+  height: 210px;
   color: white;
   background-color: black;
   display: flex;
@@ -36,4 +67,16 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1.9vw;
+  font-size: 24px;
+  @include mobile {
+    margin-top: 25px;
+    font-size: 12px;
+    text-align: center;
+    & p {
+      width: 122px;
+    }
+  }
+  @include tablet {
+    font-size: 18px;
+  }
 }

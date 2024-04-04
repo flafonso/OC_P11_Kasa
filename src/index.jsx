@@ -52,7 +52,7 @@ const router = createBrowserRouter([
 
 function Root({ children }) {
   return (
-    <div>
+    <>
       <header>
         <Logo width={211} height={68} fill="#FF6060" />
         <nav>
@@ -65,7 +65,7 @@ function Root({ children }) {
         <Logo width={122} height={39} fill="#ffffff" />
         <p>© 2020 Kasa. All rights reserved</p>
       </footer>
-    </div>
+    </>
   );
 }
 

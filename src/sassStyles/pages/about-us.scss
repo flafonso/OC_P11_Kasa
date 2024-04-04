@@ -1,7 +1,14 @@
+@import "../mixins";
+
 .collapse-container {
   margin: 0 9%;
-  width: 82%;
+  max-width: 82%;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @include mobile {
+    max-width: 100%;
+    margin: 0px;
+    gap: 20px;
+  }
 }

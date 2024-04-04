@@ -1,12 +1,12 @@
 @import "../variables";
+@import "../mixins";
 
 .error{
   display: flex;
   flex-direction: column;
-  // justify-content: space-around;
   align-items: center;
-  gap: 6.6vw;
-  margin: 6.6vw 0px;
+  gap: max(110px, 6.6vw);
+  margin: max(110px, 6.6vw) 0px;
   color: $--main-color;
   &__title {
     margin: 0;
@@ -19,5 +19,30 @@
   & a {
     color: black;
     font-size: 18px;
+  }
+  @include mobile {
+    &__title {
+      font-size: 96px;
+    }
+    &__message {
+      text-align: center;
+      max-width: 260px;
+      font-size: 18px;
+    }
+    & a {
+      font-size: 14px;
+    }
+  }
+  @include tablet {
+    &__title {
+      font-size: 144px;
+    }
+    &__message {
+      text-align: center;
+      font-size: 24px;
+    }
+    & a {
+      font-size: 18px;
+    }
   }
 }

@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins";
 
 .slideshow {
   margin-bottom: 30px;
@@ -22,7 +23,7 @@
     top: calc(50% - 40px);
     width: 48px;
     height: 80px;
-    background: url("../../assets/icons/arrow.svg");
+    background: url("../../assets/icons/arrow.svg") center center / 100% 100%;
     z-index: 2;
     cursor: pointer;
   }
@@ -40,5 +41,28 @@
     color: white;
     font-size: 18px;
     z-index: 2;
+  }
+  @include mobile {
+    margin-bottom: 15px;
+    height: 255px;
+    border-radius: 10px;
+    &__arrow-left, &__arrow-right {
+      top: calc(50% - 10px);
+      width: 12px;
+      height: 20px;
+    }
+    &__counter {
+      display: none;
+    }
+  }
+  @include tablet {
+    margin-bottom: 15px;
+    height: 355px;
+    border-radius: 10px;
+    &__arrow-left, &__arrow-right {
+      top: calc(50% - 25px);
+      width: 30px;
+      height: 50px;
+    }
   }
 }

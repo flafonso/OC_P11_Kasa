@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 function Logo({ width, height, fill }) {
   return (
     <svg
+      className="logo"
       width={width}
       height={height}
       viewBox="0 0 211 68"

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 function RatingStar({ width, height, fill }) {
   return (
     <svg
+      className="rating-star"
       width={width}
       height={height}
       viewBox="0 0 25 24"

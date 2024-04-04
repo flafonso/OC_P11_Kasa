@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .card {
   position: relative;
   width: 340px;
@@ -18,18 +20,12 @@
     top: 0;
     left: 0;
     background: linear-gradient(to top, black, transparent);
-    // background-image: linear-gradient(
-    // 180deg,
-    //   rgba(255, 255, 255, 0) 0%,
-    //   rgba(10, 10, 10, 0) 42%,
-    //   rgba(4, 4, 4, 0.205) 99.99%,
-    //   rgba(0, 0, 0, 0.5) 100%
-    // );
     z-index: 1;
     border-radius: 10px;
   }
   &__title {
     margin: 0;
+    margin-right: 20px;
     color: white;
     position: absolute;
     top: 270px;
@@ -37,5 +33,24 @@
     font-size: 18px;
     font-weight: bold;
     z-index: 2;
+  }
+  @include mobile {
+    background-color: red;
+    width: 335px;
+    height: 255px;
+    &__title {
+      top: 188px;
+    }
+  }
+  @include tablet {
+    background-color: blue;
+    width: 335px;
+    height: 255px;
+    &__title {
+      top: 188px;
+    }
+  }
+  @include desktop {
+    background-color: green;
   }
 }
