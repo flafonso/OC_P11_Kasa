@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Collapse from "../../components/Collapse";
 import Slideshow from "../../components/Slideshow";
 import RatingStar from "../../components/RatingStar";
+import Tag from "../../components/Tag";
 import "../../sassStyles/pages/housing.scss";
 
 function Housing() {
@@ -25,9 +26,7 @@ function Housing() {
           <p className="housing__location">{ad.location}</p>
           <div className="housing__tags">
             {ad.tags.map((tag, i) => (
-              <div key={`${tag}-${i}`} className="tag">
-                {tag}
-              </div>
+              <Tag key={`${tag}-${i}`} content={tag} />
             ))}
           </div>
         </div>
