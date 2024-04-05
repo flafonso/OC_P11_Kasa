@@ -5,7 +5,7 @@ import "../../sassStyles/pages/about-us.scss";
 function AboutUs() {
   return (
     <div className="about-us">
-      <Banner title="" classOption="--about-us" />
+      <Banner title="" backgroundImg="/images/landscape-2.jpg" />
       <div className="collapse-container">
         <Collapse
           title="Fiabilité"

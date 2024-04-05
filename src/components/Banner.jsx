@@ -1,14 +1,13 @@
 import PropTypes from "prop-types";
 import "../sassStyles/components/banner.scss";
 
-function Banner({ title, classOption}) {
-  // const root = document.documentElement;
-  // console.log(root);
-  // root?.style.setProperty("--banner-background", "../../assets/images/landscape-1.jpg");
-  const bannerClass = `banner banner${classOption}`;
+function Banner({ title, backgroundImg}) {
+  const backgroundStyle = {
+    background: `linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(${backgroundImg}) center center / cover no-repeat`
+  };
 
   return (
-    <div className={bannerClass}>
+    <div className="banner" style={backgroundStyle}>
       {title && <h1 className="banner__title">{title}</h1>}
     </div>
   );
@@ -16,7 +15,7 @@ function Banner({ title, classOption}) {
 
 Banner.propTypes = {
   title: PropTypes.string,
-  classOption: PropTypes.string.isRequired
+  backgroundImg: PropTypes.string.isRequired
 };
 
 export default Banner;

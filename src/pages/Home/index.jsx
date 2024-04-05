@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <div className="home">
-      <Banner title="Chez vous, partout et ailleurs" classOption="--home"/>
+      <Banner title="Chez vous, partout et ailleurs" backgroundImg={"/images/landscape-1.jpg"}/>
       <div className="ads">
         { adsData.map((ad) => <Card key={ad.id} ad={ad}/>) }
       </div>
