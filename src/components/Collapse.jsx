@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import "../sassStyles/components/collapse.scss";
 
-function Collapse({ title, content }) {
+function Collapse({ title, children }) {
   const [isFolded, setIsFolded] = useState(true);
 
   return (
@@ -15,15 +15,14 @@ function Collapse({ title, content }) {
         ></span>
       </div>
       <div className="collapse__content">
-        <p>{content}</p>
+        {children}
       </div>
     </div>
   );
 }
 
 Collapse.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 };
 
 export default Collapse;

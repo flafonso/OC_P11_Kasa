@@ -34,10 +34,10 @@
     .collapse--unfolded & {
       max-height: 1000px;
     }
-    & p {
+    & .content {
       margin: 0;
       padding: 20px;
-      white-space: pre-wrap;
+      list-style-type: none;
       transform: translateY(-100%);
       transition: transform 400ms ease-in-out;
       .collapse--unfolded & {

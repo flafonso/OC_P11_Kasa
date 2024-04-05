@@ -11,11 +11,13 @@ function Housing() {
 
   let ratingStars = [];
   for (let i = 0; i < 5; i++) {
-    ratingStars.push(<RatingStar key={`star-${i}`} fill={i < ad.rating ? "#FF6060" : "#E3E3E3"}/>);
+    ratingStars.push(
+      <RatingStar
+        key={`star-${i}`}
+        fill={i < ad.rating ? "#FF6060" : "#E3E3E3"}
+      />
+    );
   }
-
-  let equipmentsTxt = "";
-  ad.equipments.map((equipment) => equipmentsTxt+= `${equipment}\n`);
 
   return (
     <div className="housing">
@@ -40,14 +42,20 @@ function Housing() {
               }}
             ></div>
           </div>
-          <div className="host__rating">
-            {ratingStars}
-          </div>
+          <div className="host__rating">{ratingStars}</div>
         </div>
       </div>
       <div className="housing__details">
-        <Collapse title="Descrition" content={ad.description} />
-        <Collapse title="Équipement" content={equipmentsTxt} />
+        <Collapse title="Descrition">
+          <p className="content">{ad.description}</p>
+        </Collapse>
+        <Collapse title="Équipement">
+          <ul className="content">
+            {ad.equipments.map((equipment, i) => (
+              <li key={`${equipment}-${i}`}>{equipment}</li>
+            ))}
+          </ul>
+        </Collapse>
       </div>
     </div>
   );
