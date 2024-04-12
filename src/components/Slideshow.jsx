@@ -3,18 +3,20 @@ import PropTypes from "prop-types";
 import "../sassStyles/components/slideshow.scss";
 
 function Slideshow({ pictures }) {
-  const imgContainerRef = useRef(null);
+  const [canSlide, setCanSlide] = useState(true);
   const [index, setIndex] = useState(0);
+  const imgContainerRef = useRef(null);
   const maxLength = pictures.length - 1;
   const arrows =
     maxLength + 1 !== 1 ? (
       <>
         <span
           className="slideshow__arrow-left"
-          onClick={slideThePrevious}
+          onClick={() => slideTo(-1)}
         ></span>
-        <span className="slideshow__arrow-right"
-              onClick={slideTheNext}
+        <span
+          className="slideshow__arrow-right"
+          onClick={() => slideTo(1)}
         ></span>
         <span className="slideshow__counter">
           {index + 1}/{maxLength + 1}
@@ -37,35 +39,41 @@ function Slideshow({ pictures }) {
     image.classList.add("slideshow__image");
     image.style.background = `url(${pictures[newIndex]}) center center / cover`;
     image.style.transform = `translateX(${100 * position}%)`;
-    position > 0
+    if (imgContainerRef.current) {
+      position > 0
       ? imgContainerRef.current.append(image)
       : imgContainerRef.current.prepend(image);
+    }
   }
 
-  function slideTheNext() {
-    const newIndex = index === maxLength ? 0 : index + 1;
-    createNewImg(newIndex, 1);
+  function slideTo(position) {
+    if (!canSlide) {
+      return ;
+    }
+    setCanSlide(false);
+    const newIndex =
+      position === 1
+        ? index === maxLength
+          ? 0
+          : index + 1
+        : index === 0
+        ? maxLength
+        : index - 1;
+    createNewImg(newIndex, position);
     requestAnimationFrame(() => {
-      imgContainerRef.current.children[0].style.transform = "translateX(-100%)";
-      imgContainerRef.current.children[1].style.transform = "translateX(0%)";
+      imgContainerRef.current.children[0].style.transform = `translateX(${
+        position === 1 ? "-100%" : "0%"
+      })`;
+      imgContainerRef.current.children[1].style.transform = `translateX(${
+        position === 1 ? "0%" : "100%"
+      })`;
     });
     setTimeout(() => {
-      deleteOldImg(1);
+      deleteOldImg(position);
+      setCanSlide(true);
     }, 400);
     setIndex(newIndex);
-  }
-
-  function slideThePrevious() {
-    const newIndex = index === 0 ? maxLength : index - 1;
-    createNewImg(newIndex, -1);
-    requestAnimationFrame(() => {
-      imgContainerRef.current.children[0].style.transform = "translateX(0%)";
-      imgContainerRef.current.children[1].style.transform = "translateX(100%)";
-    });
-    setTimeout(() => {
-      deleteOldImg(-1);
-    }, 400);
-    setIndex(newIndex);
+    console.log("slideTo call");
   }
 
   return (
